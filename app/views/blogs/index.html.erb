@@ -1,9 +1,13 @@
 <h1> Updated Index Page </h1>
+<% c=0 %>
 <% for i in @blogs %>
+    
     <p>
-        <%= i.title %> <br>
-        <%= i.body %>
+        <%= c+1 %>) &nbsp;
+        <%= link_to i.title, blog_path(i.id), style:"text-decoration:none; color:inherit" %> &nbsp;
+        <%= link_to i.body, blog_path(i.id), style:"text-decoration:none; color:inherit" %>
     </p>
+    <% c+=1 %>
 <% end %>
 
 <%=  link_to "New Blog", new_blog_path, style:"text-decoration:none;" %>

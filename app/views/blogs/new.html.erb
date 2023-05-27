@@ -1,0 +1,16 @@
+<%= form_with model:Blog.new do |f| %>
+    <div>
+        <%= f.label "Blog Title" %>
+        <%= f.text_field :title %>
+    </div>
+
+    <div>
+        <%= f.label "Blog Body" %>
+        <%= f.text_area :body %>
+    </div>
+
+    <div>
+        <%= f.submit "Create Blog" %>
+    </div>
+<% end %>
+
