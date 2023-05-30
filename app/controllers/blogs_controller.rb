@@ -5,6 +5,7 @@ class BlogsController < ApplicationController
 
     def show
         @show_blog = Blog.find(params[:id])
+        @all_comments_for_blog = @show_blog.comments.order(created_at: "desc")
     end
 
 

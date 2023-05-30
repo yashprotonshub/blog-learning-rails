@@ -1,0 +1,21 @@
+<h1> <%= @show_blog.title %> </h1>
+<p>
+    <%= @show_blog.body %>
+</p>
+<%= form_with model:[@show_blog, Comment.new] do |f| %>
+    <div>
+        <%= f.label "New Comment" %>
+        <%= f.text_field :body %>
+    </div>
+
+    <div>
+        <%= f.submit %>
+    </div>
+<% end %>
+
+<h2> All Comments </h2>
+<% for comment in @all_comments_for_blog %>
+    <p>
+        <%= comment.body %>
+    </p>
+<% end %>
